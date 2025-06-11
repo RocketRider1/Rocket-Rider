@@ -31,6 +31,12 @@
       font-size: 1rem;
       cursor: pointer;
     }
+    #checkout-message {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      color: green;
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -39,6 +45,8 @@
   <div class="total" id="cart-total"></div>
   <button onclick="goBack()">← Back to Shop</button>
   <button onclick="clearCart()">🗑️ Clear Cart</button>
+  <button onclick="checkout()">💳 Checkout</button>
+  <div id="checkout-message">Thank you for your purchase! Your order has been placed.</div>
 
   <script>
     function loadCart() {
@@ -72,6 +80,18 @@
     function clearCart() {
       localStorage.removeItem('cart');
       loadCart();
+      document.getElementById('checkout-message').style.display = 'none';
+    }
+
+    function checkout() {
+      const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+      if (cartItems.length === 0) {
+        alert('Your cart is empty.');
+        return;
+      }
+      localStorage.removeItem('cart');
+      loadCart();
+      document.getElementById('checkout-message').style.display = 'block';
     }
 
     loadCart();
