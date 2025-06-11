@@ -1,46 +1,74 @@
-<!-- shop.html (updated) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rocket Rider Shop</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: white;
       color: black;
-      text-align: center;
       padding: 20px;
+      text-align: center;
     }
-    h1 { font-size: 2.5rem; }
+    h1 {
+      font-size: 2.5rem;
+    }
     .product {
-      margin: 20px;
+      border: 2px solid #000;
+      margin: 20px auto;
+      padding: 20px;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 10px;
     }
     button {
       padding: 10px 20px;
       font-size: 1rem;
       cursor: pointer;
     }
+    #cart {
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-  <h1>Our Rocket Kits</h1>
+  <h1>Rocket Rider Shop</h1>
+
   <div class="product">
-    <h2>Starter Rocket</h2>
-    <p>$49.99</p>
-    <a href="starter.html"><button>View Details</button></a>
+    <h2>Starter Rocket - $49.99</h2>
+    <p>Perfect for beginners! This kit includes everything you need to build and launch your first rocket.</p>
+    <button onclick="addToCart('Starter Rocket', 49.99)">Add to Cart</button>
   </div>
+
   <div class="product">
-    <h2>Advanced Rocket</h2>
-    <p>$149.99</p>
-    <a href="advanced.html"><button>View Details</button></a>
+    <h2>Advanced Rocket - $149.99</h2>
+    <p>Take your skills to the next level with this powerful, high-altitude rocket kit.</p>
+    <button onclick="addToCart('Advanced Rocket', 149.99)">Add to Cart</button>
   </div>
+
   <div class="product">
-    <h2>Explorer Rocket</h2>
-    <p>$249.99</p>
-    <a href="explorer.html"><button>View Details</button></a>
+    <h2>Explorer Rocket - $249.99</h2>
+    <p>The ultimate kit for serious rocket enthusiasts. Reach new heights with premium materials and design.</p>
+    <button onclick="addToCart('Explorer Rocket', 249.99)">Add to Cart</button>
   </div>
-  <a href="cart.html"><button>🛒 View Cart</button></a>
+
+  <div id="cart">
+    <button onclick="viewCart()">🛒 View Cart</button>
+  </div>
+
+  <script>
+    function addToCart(item, price) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ item, price });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(item + ' added to cart!');
+    }
+
+    function viewCart() {
+      window.location.href = 'cart.html';
+    }
+  </script>
 </body>
 </html>
