@@ -1,105 +1,46 @@
+<!-- shop.html (updated) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rocket Rider - Shop</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rocket Rider Shop</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Orbitron', sans-serif;
+      font-family: Arial, sans-serif;
       background-color: white;
       color: black;
-    }
-
-    header {
-      padding: 2rem;
       text-align: center;
-      background: #f5f5f5;
-      border-bottom: 4px solid black;
+      padding: 20px;
     }
-
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin: 0;
-    }
-
-    .shop-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-    }
-
+    h1 { font-size: 2.5rem; }
     .product {
-      border: 2px solid black;
-      border-radius: 12px;
-      padding: 1rem;
-      text-align: center;
+      margin: 20px;
     }
-
-    .product img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-
-    .product h2 {
-      margin: 0.8rem 0 0.4rem;
-    }
-
-    .product p {
-      margin: 0;
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-
-    .back-link {
-      display: block;
-      margin: 1rem auto;
-      width: fit-content;
-      padding: 0.6rem 1.2rem;
-      border: 2px solid black;
-      border-radius: 6px;
-      text-decoration: none;
-      color: black;
-      font-weight: bold;
-    }
-
-    .back-link:hover {
-      background: black;
-      color: white;
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Rocket Rider Shop</h1>
-  </header>
-
-  <main class="shop-container">
-    <div class="product">
-      <img src="https://via.placeholder.com/300x200?text=Rocket+Kit+1" alt="Rocket Kit 1" />
-      <h2>Starter Rocket Kit</h2>
-      <p>$49.99</p>
-    </div>
-
-    <div class="product">
-      <img src="https://via.placeholder.com/300x200?text=Rocket+Kit+2" alt="Rocket Kit 2" />
-      <h2>Advanced Rocket Kit</h2>
-      <p>$149.99</p>
-    </div>
-
-    <div class="product">
-      <img src="https://via.placeholder.com/300x200?text=Rocket+Kit+3" alt="Rocket Kit 3" />
-      <h2>Explorer Rocket Kit</h2>
-      <p>$249.99</p>
-    </div>
-  </main>
-
-  <a class="back-link" href="index.html">← Back to Home</a>
+  <h1>Our Rocket Kits</h1>
+  <div class="product">
+    <h2>Starter Rocket</h2>
+    <p>$49.99</p>
+    <a href="starter.html"><button>View Details</button></a>
+  </div>
+  <div class="product">
+    <h2>Advanced Rocket</h2>
+    <p>$149.99</p>
+    <a href="advanced.html"><button>View Details</button></a>
+  </div>
+  <div class="product">
+    <h2>Explorer Rocket</h2>
+    <p>$249.99</p>
+    <a href="explorer.html"><button>View Details</button></a>
+  </div>
+  <a href="cart.html"><button>🛒 View Cart</button></a>
 </body>
 </html>
