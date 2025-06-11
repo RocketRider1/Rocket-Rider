@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rocket Alpha - Rocket Rider</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: black;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 1.2rem;
+      margin: 20px 0;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    ul {
+      text-align: left;
+      display: inline-block;
+      margin: 20px 0;
+    }
+    li {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Rocket Alpha</h1>
+  <p>The perfect entry-level rocket kit for beginner riders. Simple to assemble, easy to launch!</p>
+  <ul>
+    <li><strong>Height:</strong> 1 foot</li>
+    <li><strong>Diameter:</strong> 3 inches</li>
+    <li><strong>Engine Size:</strong> Requires 29mm engine</li>
+    <li><strong>Body:</strong> Reinforced plastic and lightweight aluminum</li>
+    <li><strong>Recovery System:</strong> Parachute deploy</li>
+  </ul>
+  <p><strong>Price: $49.99</strong></p>
+  <button onclick="addToCart('Rocket Alpha', 49.99)">Add to Cart</button>
+  <button onclick="viewCart()">View Cart</button>
+
+  <script>
+    function addToCart(item, price) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ item, price });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`${item} has been added to your cart.`);
+    }
+    function viewCart() {
+      window.location.href = 'cart.html';
+    }
+  </script>
+</body>
+</html>
