@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart - Rocket Rider</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: black;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+    .cart-item {
+      border-bottom: 1px solid #ccc;
+      margin: 10px 0;
+      padding: 10px;
+    }
+    .total {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Your Cart</h1>
+  <div id="cart-items"></div>
+  <div class="total" id="cart-total"></div>
+  <button onclick="goBack()">← Back to Shop</button>
+
+  <script>
+    function loadCart() {
+      const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartContainer = document.getElementById('cart-items');
+      const totalDisplay = document.getElementById('cart-total');
+      cartContainer.innerHTML = '';
+      let total = 0;
+
+      if (cartItems.length === 0) {
+        cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+        totalDisplay.textContent = '';
+        return;
+      }
+
+      cartItems.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.textContent = `${item.item} - $${item.price.toFixed(2)}`;
+        cartContainer.appendChild(div);
+        total += item.price;
+      });
+
+      totalDisplay.textContent = `Total: $${total.toFixed(2)}`;
+    }
+
+    function goBack() {
+      window.location.href = 'shop.html';
+    }
+
+    loadCart();
+  </script>
+</body>
+</html>
