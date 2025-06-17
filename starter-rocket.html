@@ -37,17 +37,17 @@
 </head>
 <body>
   <h1>Starter Rocket</h1>
-  <p>The perfect entry-level rocket kit for beginner riders. Simple to assemble, easy to launch!</p>
+  <p>The perfect rocket kit for beginners! Easy to build and launch, great for learning.</p>
   <ul>
     <li><strong>Height:</strong> 1 foot</li>
     <li><strong>Diameter:</strong> 3 inches</li>
-    <li><strong>Engine Size:</strong> Requires 29mm engine</li>
-    <li><strong>Body:</strong> Reinforced plastic and lightweight aluminum</li>
-    <li><strong>Recovery System:</strong> Parachute deploy</li>
+    <li><strong>Engine Required:</strong> 29mm</li>
+    <li><strong>Includes:</strong> Launchpad, instructions, and beginner tips</li>
   </ul>
   <p><strong>Price: $49.99</strong></p>
   <button onclick="addToCart('Starter Rocket', 49.99)">Add to Cart</button>
   <button onclick="viewCart()">View Cart</button>
+  <button onclick="goBackToShop()">Back to Shop</button>
 
   <script>
     function addToCart(item, price) {
@@ -58,6 +58,9 @@
     }
     function viewCart() {
       window.location.href = 'cart.html';
+    }
+    function goBackToShop() {
+      window.location.href = 'shop.html';
     }
   </script>
 </body>
