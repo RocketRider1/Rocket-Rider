@@ -37,17 +37,17 @@
 </head>
 <body>
   <h1>Advanced Rocket</h1>
-  <p>A powerful intermediate rocket kit for hobbyists looking to take their launches higher and faster!</p>
+  <p>A powerful rocket for experienced rocketeers looking for more altitude and performance.</p>
   <ul>
     <li><strong>Height:</strong> 3 feet</li>
     <li><strong>Diameter:</strong> 3 inches</li>
-    <li><strong>Engine Size:</strong> Requires 29mm engine</li>
-    <li><strong>Body:</strong> Reinforced carbon fiber and aluminum</li>
-    <li><strong>Recovery System:</strong> Dual-deploy parachute</li>
+    <li><strong>Engine Required:</strong> 29mm</li>
+    <li><strong>Material:</strong> Reinforced high-temp plastic body</li>
   </ul>
   <p><strong>Price: $149.99</strong></p>
   <button onclick="addToCart('Advanced Rocket', 149.99)">Add to Cart</button>
   <button onclick="viewCart()">View Cart</button>
+  <button onclick="goBackToShop()">Back to Shop</button>
 
   <script>
     function addToCart(item, price) {
@@ -58,6 +58,9 @@
     }
     function viewCart() {
       window.location.href = 'cart.html';
+    }
+    function goBackToShop() {
+      window.location.href = 'shop.html';
     }
   </script>
 </body>
